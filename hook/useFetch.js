@@ -8,14 +8,12 @@ const useFetch = (endpoint, query) => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  const axios = require('axios')
-
   const options = {
     method: 'GET',
     url: `https://jsearch.p.rapidapi.com/${endpoint}`,
     headers: {
       'content-type': 'application/octet-stream',
-      'X-RapidAPI-Key': rapidApiKey,
+      'X-RapidAPI-Key': 'ee444ba52emshd2bf5064a957b9ap141be6jsn431b1df26434',
       'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
     },
     params: {
@@ -32,7 +30,7 @@ const useFetch = (endpoint, query) => {
       setLoading(false)
     } catch (error) {
       setError(error)
-      alert('There is an error')
+      alert('Error')
     } finally {
       setLoading(false)
     }
