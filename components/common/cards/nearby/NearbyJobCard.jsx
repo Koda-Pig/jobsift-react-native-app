@@ -2,38 +2,31 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import { checkImageURL } from '../../../../utils'
 import styles from './nearbyjobcard.style'
 
-const NearbyJobCard = ({ item, selectedJob, handleCardPress }) => {
+const NearbyJobCard = ({ job, handleNavigate }) => {
   const randomImg = `https://picsum.photos/100?${Math.random()}`
 
   return (
-    <TouchableOpacity
-      style={styles.container(selectedJob, item)}
-      onPress={() => handleCardPress(item)}
-    >
-      <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
+    <TouchableOpacity style={styles.container} onPress={handleNavigate}>
+      <TouchableOpacity style={styles.logoContainer}>
         <Image
           source={{
-            uri: checkImageURL(item.employer_logo)
-              ? item.employer_logo
+            uri: checkImageURL(job.employer_logo)
+              ? job.employer_logo
               : randomImg
           }}
           resizeMode="contain"
           style={[
             styles.logoImage,
-            !checkImageURL(item.employer_logo) && { borderRadius: 11 }
+            !checkImageURL(job.employer_logo) && { borderRadius: 11 }
           ]}
         />
       </TouchableOpacity>
 
-      <Text style={styles.companyName} numberOfLines={1}>
-        {item.eployer_name}
-      </Text>
-
-      <View style={styles.infoContainer}>
-        <Text style={styles.jobName(selectedJob, item)} numberOfLines={1}>
-          {item.job_title}
+      <View style={styles.textContainer}>
+        <Text style={styles.jobName} numberOfLines={1}>
+          {job.job_title}
         </Text>
-        <Text style={styles.location}>{item.job_country}</Text>
+        <Text style={styles.jobType}>{job.job_employment_type}</Text>
       </View>
     </TouchableOpacity>
   )
