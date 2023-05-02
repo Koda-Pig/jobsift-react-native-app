@@ -1,10 +1,8 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
-import { checkImageURL } from '../../../../utils'
+import { checkImageURL, randomImg } from '../../../../utils'
 import styles from './nearbyjobcard.style'
 
 const NearbyJobCard = ({ job, handleNavigate }) => {
-  const randomImg = `https://picsum.photos/100?${Math.random()}`
-
   return (
     <TouchableOpacity style={styles.container} onPress={handleNavigate}>
       <TouchableOpacity style={styles.logoContainer}>

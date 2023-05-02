@@ -1,4 +1,4 @@
-export const checkImageURL = url => {
+const checkImageURL = url => {
   if (url) {
     const pattern = new RegExp(
       '^(https?:\\/\\/.+\\.(png|jpg|jpeg|bmp|gif|webp))$',
@@ -7,3 +7,7 @@ export const checkImageURL = url => {
     return pattern.test(url)
   } else return false
 }
+
+const randomImg = `https://picsum.photos/100?${Math.random()}`
+
+export { checkImageURL, randomImg }

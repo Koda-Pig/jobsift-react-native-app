@@ -1,10 +1,8 @@
 import { View, Text, TouchableOpacity, Image } from 'react-native'
 import styles from './popularjobcard.style'
-import { checkImageURL } from '../../../../utils'
+import { checkImageURL, randomImg } from '../../../../utils'
 
 const PopularJobCard = ({ item, selectedJob, handleCardPress }) => {
-  const randomImg = `https://picsum.photos/100?${Math.random()}`
-
   return (
     <TouchableOpacity
       style={styles.container(selectedJob, item)}

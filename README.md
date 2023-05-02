@@ -1,15 +1,16 @@
-# Expo Router Example
+# React Native practice project
 
-Use [`expo-router`](https://expo.github.io/router) to build native navigation using files in the `app/` directory.
+## installation
 
-## 🚀 How to use
+- `npm i` to install packages
+- Get API key for JSearch [here](https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch). Create `.env` file in root directory and add create `RAPID_API_KEY` variable with your API key as value.
 
-```sh
-npx create-react-native-app -t with-router
-```
+## run
 
-## 📝 Notes
+`npm start`
 
-- [Expo Router: Docs](https://expo.github.io/router)
-- [Expo Router: Repo](https://github.com/expo/router)
-- [Request for Comments](https://github.com/expo/router/discussions/1)
+# Info
+
+- Made following [this tutorial](https://youtu.be/mJ3bGvy0WAY)
+
+- View the app on your android device [here](https://expo.dev/@koda_pig/jobsift-react-native-app?serviceType=classic&distribution=expo-)

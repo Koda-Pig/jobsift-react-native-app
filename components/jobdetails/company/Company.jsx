@@ -1,11 +1,39 @@
-import { View, Text } from 'react-native'
-
+import { View, Text, Image } from 'react-native'
+import { icons } from '../../../constants'
+import { checkImageURL, randomImg } from '../../../utils'
 import styles from './company.style'
 
-const Company = () => {
+const Company = ({ companyLogo, jobTitle, companyName, location }) => {
   return (
-    <View>
-      <Text>Company</Text>
+    <View style={styles.container}>
+      <View style={styles.logoBox}>
+        <Image
+          source={{
+            uri: checkImageURL(companyLogo) ? companyLogo : randomImg
+          }}
+          resizeMode="contain"
+          style={[
+            styles.logoImage,
+            !checkImageURL(companyLogo) && { borderRadius: 11 }
+          ]}
+        />
+      </View>
+
+      <View style={styles.jobTitleBox}>
+        <Text style={styles.jobTitle}>{jobTitle}</Text>
+      </View>
+
+      <View style={styles.companyInfoBox}>
+        <Text style={styles.companyName}>{companyName} / </Text>
+        <View style={styles.locationBox}>
+          <Image
+            source={icons.location}
+            resizeMode="contain"
+            style={styles.locationImage}
+          />
+          <Text style={styles.locationName}>{location}</Text>
+        </View>
+      </View>
     </View>
   )
 }
